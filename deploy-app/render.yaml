@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: deploy-app-api
+    env: node
+    rootDir: .
+    plan: free
+    buildCommand: npm ci && npm run build --workspace backend
+    startCommand: npm run start --workspace backend
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: FRONTEND_URL
+        sync: false
+      - key: API_KEY
+        sync: false
