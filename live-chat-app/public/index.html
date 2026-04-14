@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PulseRoom | Live Chat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="ambient ambient-a"></div>
+  <div class="ambient ambient-b"></div>
+
+  <main class="app-shell">
+    <section class="identity-card">
+      <h1>PulseRoom</h1>
+      <p class="tag">Realtime chat + event notifications</p>
+
+      <form id="join-form" class="join-form" autocomplete="off">
+        <label for="username">Display name</label>
+        <input id="username" maxlength="24" placeholder="e.g. Alex" required />
+        <button type="submit">Join Room</button>
+      </form>
+
+      <div id="presence-panel" class="presence hidden">
+        <h2>Online</h2>
+        <ul id="online-users"></ul>
+      </div>
+    </section>
+
+    <section class="chat-card">
+      <header class="chat-header">
+        <div>
+          <h2>Live Feed</h2>
+          <p id="typing-indicator">Nobody is typing</p>
+        </div>
+        <span id="status-dot" class="status-dot"></span>
+      </header>
+
+      <div id="messages" class="messages"></div>
+
+      <form id="message-form" class="composer hidden" autocomplete="off">
+        <input id="message-input" maxlength="300" placeholder="Type your message..." required />
+        <button type="submit">Send</button>
+      </form>
+
+      <form id="notify-form" class="notify-form hidden" autocomplete="off">
+        <input id="notify-input" maxlength="120" placeholder="Broadcast a quick notification" required />
+        <button type="submit">Notify Everyone</button>
+      </form>
+    </section>
+  </main>
+
+  <div id="toast-stack" class="toast-stack"></div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
