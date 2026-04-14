@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modular Utility App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>Utility Application</h1>
+
+    <!-- Calculator Section -->
+    <div class="card">
+      <h2>Calculator</h2>
+      <input type="number" id="num1" placeholder="Enter first number" />
+      <input type="number" id="num2" placeholder="Enter second number" />
+
+      <div class="buttons">
+        <button onclick="calculate('add')">Add</button>
+        <button onclick="calculate('sub')">Subtract</button>
+        <button onclick="calculate('mul')">Multiply</button>
+        <button onclick="calculate('div')">Divide</button>
+      </div>
+
+      <p id="calcResult"></p>
+    </div>
+
+    <!-- String Formatter Section -->
+    <div class="card">
+      <h2>String Formatter</h2>
+      <input type="text" id="textInput" placeholder="Enter text" />
+      <button onclick="toUpperCaseText()">Uppercase</button>
+      <button onclick="toLowerCaseText()">Lowercase</button>
+
+      <p id="stringResult"></p>
+    </div>
+
+    <!-- Date Section -->
+    <div class="card">
+      <h2>Current Date & Time</h2>
+      <button onclick="showDate()">Show Date</button>
+      <p id="dateResult"></p>
+    </div>
+
+  </div>
+
+  <script type="module" src="./src/index.js"></script>
+</body>
+
+</html>
